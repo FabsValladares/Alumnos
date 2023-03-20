@@ -27,7 +27,7 @@ if($resp->rowCount()>0)
              "nombres" => $nombres,
              "apellidos" => $apellidos,
              "fechanac" => $fechanac,
-             "foto" => $foto);
+             "foto" => base64_encode($foto));
 
              array_push($alumarray,$e);
    }
