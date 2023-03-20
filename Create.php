@@ -20,11 +20,13 @@ $instancia = $database->getConnection();
 $item = new Alumnos($instancia);
 $data = json_decode(file_get_contents("php://input"));
 
+
+
 if(isset($data)){
 $item->nombres = $data->nombres;
 $item->apellidos = $data->apellidos;
 $item->fechanac = $data->fechanac;
-$item->foto = $data->foto;
+$item->foto =base64_decode( $data->foto);
 
 
 if($item->createAlumn()){
